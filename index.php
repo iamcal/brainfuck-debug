@@ -538,8 +538,8 @@ pre.viewer {
 			<br>
 			<input type="button" value="Run" onclick="run(this.form);" id="button_run">
 			<input type="button" value="Start Debugger" onclick="debug_toggle(this.form);" id="button_debug">
-			<input type="button" value="Single Step" onclick="step(this.form);" disabled id="button_step">
-			<input type="button" value="Run To Breakpoint" onclick="run_debug(this.form);" disabled id="button_run_debug">
+			<input type="button" value="Single Step" onclick="step();" disabled id="button_step">
+			<input type="button" value="Run To Breakpoint" onclick="run_debug();" disabled id="button_run_debug">
 			<br>
 			<br>
 
