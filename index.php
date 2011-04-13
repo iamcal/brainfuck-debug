@@ -373,7 +373,7 @@ function start_debugger(){
 	update_outputview();
 }
 
-function step(){
+function run_step(){
 	var op = g_program[g_ip];
 	execute_opcode(op);
 	g_ip++;
@@ -413,7 +413,7 @@ function run_debug(){
 }
 
 function run_debug_step(){
-	step();
+	run_step();
 	if ((g_program[g_ip] == '#') || g_quit_debug_run || (g_ip >= g_program.length)){
 		stop_debug_run();
 		if (g_ip >= g_program.length){
@@ -538,7 +538,7 @@ pre.viewer {
 			<br>
 			<input type="button" value="Run" onclick="run(this.form);" id="button_run">
 			<input type="button" value="Start Debugger" onclick="debug_toggle(this.form);" id="button_debug">
-			<input type="button" value="Single Step" onclick="step();" disabled id="button_step">
+			<input type="button" value="Single Step" onclick="run_step();" disabled id="button_step">
 			<input type="button" value="Run To Breakpoint" onclick="run_debug();" disabled id="button_run_debug">
 			<br>
 			<br>
