@@ -516,7 +516,10 @@ pre.viewer {
 	<tr valign="top">
 		<td colspan="2">
 			<h1>Javascript Brainfuck Interpreter / Debugger</h1>
-			<b>By <a href="http://www.iamcal.com/">Cal Henderson</a></b><br>
+			<b>By <a href="http://www.iamcal.com/">Cal Henderson</a></b>
+			|
+			Source available on <a href="https://github.com/iamcal/brainfuck-debug">Github</a>
+			<br>
 			<hr>
 		</td>
 	</tr>
