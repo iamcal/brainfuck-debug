@@ -33,6 +33,15 @@ function init(){
 	if (navigator.userAgent.toLowerCase().indexOf("msie") != -1){
 		g_linebreaker = "\r";
 	}
+
+    document.addEventListener('keypress', function(e) {
+        //n for single step
+        if (e.keyCode == 110)
+            document.getElementById('button_step').click();
+        //c for run to next breakpoint
+        if (e.keyCode == 99)
+            document.getElementById('button_run_debug').click();
+    }, false);
 }
 
 function init_memory(){
@@ -391,14 +400,14 @@ function run_step(){
 function start_debug_run(){
 	disable_button('button_debug');
 	disable_button('button_step');
-	change_button_caption('button_run_debug', 'Stop Running');
+	change_button_caption('button_run_debug', 'Stop Running (c)');
 	g_debugging_running = 1;
 }
 
 function stop_debug_run(){
 	enable_button('button_debug');
 	enable_button('button_step');
-	change_button_caption('button_run_debug', 'Run To Breakpoint');
+	change_button_caption('button_run_debug', 'Run To Breakpoint (c)');
 	g_debugging_running = 0;
 }
 
@@ -538,8 +547,8 @@ pre.viewer {
 			<br>
 			<input type="button" value="Run" onclick="run(this.form);" id="button_run">
 			<input type="button" value="Start Debugger" onclick="debug_toggle(this.form);" id="button_debug">
-			<input type="button" value="Single Step" onclick="run_step();" disabled id="button_step">
-			<input type="button" value="Run To Breakpoint" onclick="run_debug();" disabled id="button_run_debug">
+			<input type="button" value="Single Step (n)" onclick="run_step();" disabled id="button_step">
+			<input type="button" value="Run To Breakpoint (c)" onclick="run_debug();" disabled id="button_run_debug">
 			<br>
 			<br>
 
