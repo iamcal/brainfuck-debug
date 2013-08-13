@@ -152,7 +152,7 @@ function execute_opcode(op){
 			break;
 		case '<':
 			g_mp--;
-			if (g_mp < 0) g_mp = g_max_mem;
+			if (g_mp < 0) g_mp = g_max_mem-1;
 			break;
 		case '[':
 			if (g_memory[g_mp] == 0) g_ip = g_targets[g_ip];
